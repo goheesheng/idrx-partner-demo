@@ -5,7 +5,19 @@
   "invitationId": "7db36a6e-3620-4c8b-9e4c-96f83f08dc70",
   "credential": "0000000000000000000000000000000000000000000000000000000000000000",
   "repoPath": ".",
-  "selectedPaths": ["src"],
+  "selectedPaths": [
+    "src"
+  ],
   "selectedPathsCount": 1,
-  "consentRung": "propose-patch"
+  "consentRung": "propose-patch",
+  "fixturePath": "./idrx-demo-fixture-v1.json",
+  "authorizationExpiresAt": "2026-09-09T16:58:31.248Z",
+  "deploymentStatus": "deployed",
+  "checks": {
+    "syntax": null,
+    "typecheck": null,
+    "customerTests": "npm test",
+    "providerFixture": null,
+    "sandbox": null
+  }
 }

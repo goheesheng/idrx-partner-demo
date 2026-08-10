@@ -1,0 +1,8 @@
+{
+  "fixtureRef": "idrx-demo-fixture-v1",
+  "description": "What a partner must be able to do to be considered compatible.",
+  "cases": [
+    { "name": "transfer carries an idempotency key", "endpoint": "POST /v1/transfers", "requiredHeaders": ["Idempotency-Key"] },
+    { "name": "redemption carries an idempotency key", "endpoint": "POST /v1/redemptions", "requiredHeaders": ["Idempotency-Key"] }
+  ]
+}
