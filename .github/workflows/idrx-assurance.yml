@@ -1,0 +1,52 @@
+name: IDRX integration assurance
+
+# Three ways in, all of them ours:
+#   repository_dispatch  IDRX announced a campaign and we opted in to the
+#                        CI trigger, so this runs within minutes.
+#   schedule             the backstop, in case a dispatch was never sent.
+#   workflow_dispatch    a human pressing the button.
+on:
+  repository_dispatch:
+    types: [idrx-campaign]
+  schedule:
+    - cron: "0 */2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  assurance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # Pinned to an immutable commit SHA, not a tag or a branch. This repo
+      # decides when it takes a new version of the action; nothing upstream
+      # can change what runs here.
+      - id: idrx
+        uses: goheesheng/idrx-action@83e830010f016fb8079b5d2da79617bfb6858274
+        with:
+          config: idrx-runner.json
+          credential: ${{ secrets.IDRX_CREDENTIAL }}
+
+      # Through `env`, never interpolated into the script. These outputs are
+      # derived from the provider's campaign feed, which is not this
+      # repository's data — so it is treated as untrusted input.
+      - name: Summary
+        if: always()
+        env:
+          CAMPAIGNS: ${{ steps.idrx.outputs.campaigns }}
+          BRANCHES: ${{ steps.idrx.outputs.branches }}
+          PULL_REQUESTS: ${{ steps.idrx.outputs.pull-requests }}
+        run: |
+          echo "campaigns:     $CAMPAIGNS"
+          echo "branches:      $BRANCHES"
+          echo "pull requests: $PULL_REQUESTS"

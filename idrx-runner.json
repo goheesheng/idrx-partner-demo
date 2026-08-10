@@ -1,0 +1,11 @@
+{
+  "serverUrl": "https://lyrics-going-receptors-script.trycloudflare.com",
+  "campaignId": "adc37576-bc25-4454-85af-47064c4f5747",
+  "partnerRef": "partner-demo",
+  "invitationId": "7db36a6e-3620-4c8b-9e4c-96f83f08dc70",
+  "credential": "0000000000000000000000000000000000000000000000000000000000000000",
+  "repoPath": ".",
+  "selectedPaths": ["src"],
+  "selectedPathsCount": 1,
+  "consentRung": "propose-patch"
+}
