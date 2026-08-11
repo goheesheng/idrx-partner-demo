@@ -32,7 +32,7 @@ jobs:
       # decides when it takes a new version of the action; nothing upstream
       # can change what runs here.
       - id: idrx
-        uses: goheesheng/idrx-action@83e830010f016fb8079b5d2da79617bfb6858274
+        uses: goheesheng/idrx-action@f1f92857ba883d6266c901cca68d257c905b2605
         with:
           config: idrx-runner.json
           credential: ${{ secrets.IDRX_CREDENTIAL }}
