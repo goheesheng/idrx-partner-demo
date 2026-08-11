@@ -2,7 +2,7 @@ const API_BASE = process.env.IDRX_API_BASE ?? "https://api.idrx.example.invalid"
 
 /** Move IDRX between two accounts. */
 export async function createTransfer({ from, to, amount, idempotencyKey }) {
-  const response = await fetch(`${API_BASE}/v1/transfers`, {
+  const response = await fetch(`${API_BASE}/v1/transfers`, { headers: { "X-IDRX-Channel": "partner-api" },
     method: "POST",
     body: JSON.stringify({ from, to, amount, idempotencyKey })
   });
