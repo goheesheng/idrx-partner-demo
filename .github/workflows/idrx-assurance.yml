@@ -36,6 +36,7 @@ jobs:
         with:
           config: idrx-runner.json
           credential: ${{ secrets.IDRX_CREDENTIAL }}
+          runner-key: ${{ secrets.IDRX_RUNNER_KEY }}
 
       # Through `env`, never interpolated into the script. These outputs are
       # derived from the provider's campaign feed, which is not this
