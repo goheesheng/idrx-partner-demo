@@ -1,8 +1,8 @@
 {
-  "serverUrl": "https://bernard-beside-productions-condition.trycloudflare.com",
-  "campaignId": "198c5617-1df8-461a-873a-ab941eabd8e1",
+  "serverUrl": "https://idrx-control-plane.vercel.app",
+  "campaignId": "c45ef30c-95ae-480f-9b62-d7514a6b5766",
   "partnerRef": "partner-demo",
-  "invitationId": "5954316e-1ec2-4eac-b0c5-1e8d6d1f2928",
+  "invitationId": "f495223c-bf08-4144-a21e-6dce8716c7de",
   "credential": "0000000000000000000000000000000000000000000000000000000000000000",
   "repoPath": ".",
   "selectedPaths": [
